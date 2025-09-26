@@ -1199,7 +1199,7 @@ const SearchPage = () => {
                         <Badge
                           key={idx}
                           variant="secondary"
-                          className="group relative overflow-hidden bg-vintage-teal/20 backdrop-blur-sm border border-vintage-teal/30 text-vintage-teal cursor-pointer hover:bg-vintage-teal/40 hover:border-vintage-teal/50 transition-all duration-300 px-4 py-2 rounded-full shadow-lg hover:shadow-xl hover:scale-105"
+                          className="group relative overflow-hidden cursor-pointer transition-all duration-300 px-4 py-2 rounded-full hover:scale-105"
                           onClick={() => {
                             setSearchTerm(term);
                             setHasSearched(true);
@@ -1358,7 +1358,7 @@ const SearchPage = () => {
                     <CardContent>
                       <div className="space-y-2">
                         {recentSearches.map((search, idx) => (
-                          <div key={idx} className="text-sm p-2 bg-white/10 rounded text-white/80">
+                          <div key={idx} className="text-sm p-2 rounded">
                             {search}
                           </div>
                         ))}
