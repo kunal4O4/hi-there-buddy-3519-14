@@ -512,58 +512,9 @@ const SearchPage = () => {
                     type="text" 
                     value={searchTerm} 
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    onFocus={() => setShowSuggestions(true)}
-                    onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                     placeholder="Search memories, people, events... (Try voice search!)" 
-                    className="w-full text-base border-0 focus:outline-none focus:ring-0 placeholder-gray-400 text-black bg-transparent" 
+                    className="w-full text-base border-0 focus:outline-none focus:ring-0 placeholder-gray-400 text-black bg-transparent font-medium" 
                   />
-                  
-                  {/* AI Suggestions Dropdown */}
-                  {showSuggestions && (aiSuggestions.length > 0 || recentSearches.length > 0) && (
-                    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 z-50 max-h-64 overflow-y-auto">
-                      {aiSuggestions.length > 0 && (
-                        <div className="p-3">
-                          <div className="text-xs font-semibold text-gray-500 mb-2 flex items-center">
-                            <Brain className="h-3 w-3 mr-1" />
-                            AI Suggestions
-                          </div>
-                          {aiSuggestions.map((suggestion, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => {
-                                setSearchTerm(suggestion);
-                                setShowSuggestions(false);
-                              }}
-                              className="block w-full text-left px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-700 transition-colors"
-                            >
-                              {suggestion}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                      
-                      {recentSearches.length > 0 && (
-                        <div className="p-3 border-t border-gray-100">
-                          <div className="text-xs font-semibold text-gray-500 mb-2 flex items-center">
-                            <History className="h-3 w-3 mr-1" />
-                            Recent Searches
-                          </div>
-                          {recentSearches.map((recent, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => {
-                                setSearchTerm(recent);
-                                setShowSuggestions(false);
-                              }}
-                              className="block w-full text-left px-3 py-2 hover:bg-gray-50 rounded-lg text-sm text-gray-600 transition-colors"
-                            >
-                              {recent}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
                 </div>
 
                 {/* Voice Search Button */}
