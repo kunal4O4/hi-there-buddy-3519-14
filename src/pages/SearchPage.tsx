@@ -852,7 +852,7 @@ const SearchPage = () => {
                       </div>
 
                       {/* Image */}
-                      <div className={`relative group-hover:scale-102 transition-all duration-500 ${viewMode === 'list' ? 'flex-shrink-0 w-32' : 'mb-6'}`}>
+                      <div className={`relative ${viewMode === 'list' ? 'flex-shrink-0 w-32' : 'mb-6'}`}>
                         <RetroImage src={result.image} alt={result.title} variant="polaroid" size={viewMode === 'list' ? 'sm' : 'full'} aspectRatio="square" rotation="slight" className="w-full" />
                         
                         {/* Action Buttons */}
@@ -866,14 +866,6 @@ const SearchPage = () => {
                           <button onClick={() => handleShare(result)} className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-vintage hover:bg-white transition-all duration-300 hover:scale-105 text-retro-purple">
                             <Share2 className="h-4 w-4" />
                           </button>
-                        </div>
-
-                        {/* Hover overlay */}
-                        <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                          <Button className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/50 hover:bg-white/30 hover:scale-105 transition-all duration-300 rounded-full px-4 py-2 font-bold">
-                            <Eye className="h-4 w-4 mr-2" />
-                            View
-                          </Button>
                         </div>
                       </div>
 
